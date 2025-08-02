@@ -1,17 +1,12 @@
-from database.py import connect, init_db, addBook, get_books
+from database import init_db
+from data_loader import load_session_from_json
+from database import count_sessions
 
 def main():
-    while True:
-        print("\n1. Add Book\n2. Viev by Genre\ns. Count by Author\n4. Exit")
-        choice = input("Choose an option: ")
-        if choice == '1':
-            addBook()
-        elif choice == '2':
-            get_books()
-        elif choice == '3':
-            pass
-        elif choice == '4':
-            break
+    init_db()
+    load_session_from_json("many_sessions_100.json")
+    print(f"\n Total sessions in DB: {count_sessions()}")
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
