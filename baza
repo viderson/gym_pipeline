@@ -1,27 +1,19 @@
-users_data (LIST)
-│
-├── user_data (DICT)
-│   ├── "user" (DICT)
-│   │   ├── "name": "Kuba"
-│   │   └── "email": "kuba@example.com"
-│   │
-│   └── "sessions" (LIST)
-│       │
-│       ├── session (DICT)
-│       │   ├── "training_day": "FULLBODY1"
-│       │   ├── "body_weight": 75.0
-│       │   ├── "date": "2025-08-03"
-│       │   ├── ...
-│       │   └── "exercises" (LIST)
-│       │       │
-│       │       ├── exercise_entry (DICT)
-│       │       │   ├── "exercise": "Bench Press"
-│       │       │   ├── "muscle_group": "Chest"
-│       │       │   ├── "weight": 80
-│       │       │   └── "reps": 8
-│       │       │
-│       │       └── ...
-│       │
-│       └── ...
-│
-└── ...
+┌──────────────┐             ┌───────────────────────┐             ┌─────────────────────────┐
+│   users      │             │   training_sessions   │             │        exercises        │
+├──────────────┤             ├───────────────────────┤             ├─────────────────────────┤
+│ id (PK)      │◄────────────┤ user_id (FK → users)  │◄────────────│ session_id (FK → ts.id) │
+│ name         │             │ id (PK)               │             │ id (PK)                 │
+│ email (UNIQ) │             │ training_day          │             │ exercise                │
+└──────────────┘             │ date                  │             │ muscle_group            │
+                             │ body_weight           │             │ weight                  │
+                             │ mood                  │             │ reps                    │
+                             │ chest                 │             └─────────────────────────┘
+                             │ arms
+                             │ waist
+                             │ legs
+                             │ shoulders
+                             │ training_duration_minutes
+                             │ sleep_hours
+                             │ stress_level
+                             │ program_phase
+                             └───────────────────────┘
