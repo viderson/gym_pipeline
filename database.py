@@ -30,7 +30,7 @@ def addTraining_session(training_day: str, body_weight: float, mood: str, date: 
 
 
 def add_exercise_with_session_key(session_id: int, excercise: str, weight: float, reps: int):
-    """Add excercise to existing training session."""
+    """Add exercise to existing training session."""
     with connect() as conn:
         cursor = conn.cursor()
         cursor.execute(
@@ -44,6 +44,17 @@ def count_sessions():
         cursor.execute("SELECT COUNT(*) FROM training_sessions")
         return cursor.fetchone()[0]
     
+def get_all_session():
+    with connect() as conn:
+        cursor = conn.cursor()
+        return cursor.execute("SELECT * FROM training_sessions").fetchall()
+
+def get_exercises_for_session(session_id):
+    with connect() as conn:
+        cursor = conn.cursor()
+        return cursor.execute("SELECT * FROM exercises WHERE session_id = ?", (session_id,)).fetchall()
+
+
 # def addBook():
 #     title = input("Title: ")
 #     author = input("Author: ")
