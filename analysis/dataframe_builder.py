@@ -1,17 +1,12 @@
-import pandas as pd
+import pandas as pd 
 from database.queries import get_all_users, get_training_data_for_user
 
-def main():
-    users = get_all_users()
-    print(users)
-    # Kuba_training_data = get_training_data_for_user(1) 
-    # print(Kuba_training_data[0])
+def build_user_dataframe(user_id: int) -> pd.DataFrame:
+    rows = get_training_data_for_user(user_id)
     columns = [
         "session_id", "training_day", "date", "body_weight", "mood", "dchest", "arms", "waist", "legs", "shoulders", "training_duration_minutes",
         "sleep_hours", "stress_level", "program_phase", "exercise", "muscle_group", "weight", "reps"
     ]
-    rows = get_training_data_for_user(1) #first user
-    df = pd.DataFrame(rows, columns = columns)
-    print(df)
-if __name__ == "__main__":
-    main()
+    df = pd.DataFrame(rows,columns = columns)
+    df["volume"] = df["weight"] * df["reps"]
+    return df

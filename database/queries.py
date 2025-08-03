@@ -1,12 +1,26 @@
 from . import connect
 
 def get_all_users():
-    """Select all users"""
+    """
+    Returns a list of all users from the 'users' table.
+
+    Returns:
+        List[Tuple[int, str, str]]: [(id, name, email), ...]
+    """
     with connect() as conn:
         cursor = conn.cursor()
         return cursor.execute("SELECT * FROM users").fetchall()
-def get_training_data_for_user(user_id):
-    """ Returns training data for user"""
+def get_training_data_for_user(user_id: int):
+    """
+    Returns all training data for a given user by joining exercises and sessions.
+
+    Returns:
+        List[Tuple]: 
+            (session_id, training_day, date, body_weight, mood,
+             chest, arms, waist, legs, shoulders,
+             training_duration_minutes, sleep_hours, stress_level, program_phase,
+             exercise, muscle_group, weight, reps)
+    """
     with connect() as conn:
         cursor = conn.cursor()
         cursor.execute("""
