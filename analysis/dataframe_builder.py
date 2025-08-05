@@ -1,5 +1,5 @@
 import pandas as pd 
-from database.queries import get_all_users, get_training_data_for_user
+from database.queries import get_training_data_for_user
 
 def build_user_dataframe(user_id: int) -> pd.DataFrame:
     rows = get_training_data_for_user(user_id)

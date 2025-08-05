@@ -1,6 +1,6 @@
 from . import connect
 
-def get_all_users():
+def get_all_users(): #Future extension
     """
     Returns a list of all users from the 'users' table.
 

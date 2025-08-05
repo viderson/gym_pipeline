@@ -1,7 +1,11 @@
 import sqlite3
 import os
 
-DB_NAME = os.getenv("DB_NAME", "workout_data_base.db")
+folder_1 = os.path.dirname(__file__)
+folder_1 = folder_1[:folder_1.rfind('\\')]
+db_file_path = folder_1 + '\workout_data_base.db'
+
+DB_NAME = db_file_path
 
 def connect():
     conn = sqlite3.connect(DB_NAME)
