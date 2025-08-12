@@ -1,5 +1,5 @@
 from database import init_db
-from data_loader import load_data
+from database.data_loader import load_data
 
 def main():
     init_db()
