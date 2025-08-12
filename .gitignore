@@ -1,0 +1,37 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.venv/
+env/
+venv/
+ENV/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Logs and artifacts
+logs/
+artifact/
+
+# SQLite databases
+*.db
+
+# CatBoost training info
+analysis/catboost_info/
+
+# Python egg metadata
+*.egg-info/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# VSCode settings
+.vscode/
+
+# Temporary files
+*.tmp
+*.log
