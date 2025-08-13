@@ -15,6 +15,7 @@ Requires-Dist: ipykernel
 Requires-Dist: nbformat>=4.2.0
 Requires-Dist: catboost
 Requires-Dist: xgboost
+Requires-Dist: dill
 Dynamic: author
 Dynamic: requires-dist
 Dynamic: requires-python
