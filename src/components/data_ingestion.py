@@ -22,7 +22,8 @@ class DataIngestion:
     def initiate_data_ingestion(self):
         logging.info("Entered the data ingestion method or component")
         try:
-            df = build_user_dataframe(1) ##potencjalnie jakis input
+            df = build_user_dataframe(1) #potencjalnie jakis input
+            df = df[df['exercise'] == 'Barbell Bench Press'] #potencjalnie do wyboru ćwiczenie
             logging.info("Read the dataset as dataframe")
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path), exist_ok = True)
 
