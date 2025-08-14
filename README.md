@@ -1,1 +1,1 @@
-# book_manager
+Full Pipeline project
