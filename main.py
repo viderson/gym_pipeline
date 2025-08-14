@@ -3,7 +3,7 @@ from database.data_loader import load_data
 
 def main():
     init_db()
-    load_data("training_data_realistic.json")
+    load_data("data.json")
     
 
 if __name__ == "__main__":
