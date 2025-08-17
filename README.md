@@ -127,7 +127,7 @@ python database_init.py   # creates schema + loads demo records from data.json
 
 ### 3) (Re)Train models (optional)
 
-> The project includes component code for training; you can wire a simple CLI in `src/pipeline/train_pipeline.py` to call `DataTransformation` and `ModelTrainer` or do it from the notebook in `analysis/model_training.ipynb`.
+> The project includes component code for training; you can wire a simple CLI in `src/pipeline/train_pipeline.py` to call `DataTransformation` and `ModelTrainer`.
 
 Example (pseudo‑CLI inside a `train()` function):
 
