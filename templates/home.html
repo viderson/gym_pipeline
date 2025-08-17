@@ -64,7 +64,7 @@
 
               <!-- training_duration_minutes -->
               <div class="mb-3">
-              <label class="form-label">Training duration (minutes)</label>
+              <label class="form-label">Training duration (hours)</label>
               <input class="form-control" type="number" name="training_duration_minutes" step="0.1" min="0" required>
               </div>
 
@@ -94,9 +94,8 @@
                 <button class="btn btn-primary" type="submit">Predict bench volume</button>
               </div>
             </form>
-
             {% if results is defined %}
-            <h2 class="h5 mt-4 text-center">Prediction: {{ results }}</h2>
+            <h2 class="h5 mt-4 text-center">Prediction: {{ results|float|round(2) }} g &times; reps</h2>
             {% endif %}
           </div>
         </div>
