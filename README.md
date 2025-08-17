@@ -197,7 +197,7 @@ See `requirements.txt` for the full list. Key packages: `numpy`, `pandas`, `scik
 
 ## License
 
-MIT (or specify your preferred license).
+MIT.
 
 ---
 
