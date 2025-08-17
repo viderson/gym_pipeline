@@ -17,7 +17,7 @@ def get_requirements(file_path:str)->List[str]:
     return requirements
 
 setup(
-    name="database",
+    name="Pipeline Project",
     version="0.1.0",
     description="Pipeline",
     author="FW",

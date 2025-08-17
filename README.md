@@ -197,10 +197,7 @@ See `requirements.txt` for the full list. Key packages: `numpy`, `pandas`, `scik
 
 ## License
 
-MIT (or specify your preferred license).
+MIT.
 
 ---
 
-## Contact
-
-If you have questions, open an issue or reach out to the author listed in `setup.py`.
