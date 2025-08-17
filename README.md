@@ -2,7 +2,7 @@
 
 A compact, CV‑ready project that demonstrates a full machine‑learning lifecycle for strength‑training data. It ingests workout sessions from a SQLite database (seeded from JSON), engineers features, trains and selects regression models, serializes the winning model + preprocessing pipeline, and serves live predictions via a minimal Flask web app.
 
-> **Use case**: Predict bench‑press **volume** (weight × reps) from session context (anthropometrics, sleep, stress, mood, program phase, etc.).
+> **Use case**: Predict exercise (default: bench press) **volume** (weight × reps) from session context (anthropometrics, sleep, stress, mood, program phase, etc.).
 
 ---
 
@@ -178,8 +178,6 @@ python app.py
 * Add input validation and a thin schema layer (e.g., `pydantic`) to harden the Flask form.
 * Consider switching serialization to `joblib` or a model registry if the project grows.
 * Expand metrics to MAE/RMSE; add cross‑validation and learning‑curve plots.
-* Containerize with a `Dockerfile` for easy deployment.
-* Replace ad‑hoc paths with `pathlib` and environment‑driven config.
 
 ---
 
