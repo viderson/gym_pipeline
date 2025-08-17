@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bench Press Volume Prediction</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- opcjonalnie bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h1 class="h4 mb-4 text-center">Bench Press Volume Prediction</h1>
+
+            <form action="{{ url_for('predict_datapoint') }}" method="post" novalidate>
+              <!-- body_weight -->
+              <div class="mb-3">
+                <label class="form-label">Body weight (kg)</label>
+                <input class="form-control" type="number" name="body_weight" step="0.1" min="0" required>
+              </div>
+
+              <!-- mood -->
+              <div class="mb-3">
+                <label class="form-label">Mood</label>
+                <select class="form-control" name="mood" required>
+                  <option selected disabled value="">Select mood</option>
+                  <option value="okay">okay</option>
+                  <option value="good">good</option>
+                  <option value="tired">tired</option>
+                </select>
+              </div>
+
+              <!-- dchest -->
+              <div class="mb-3">
+                <label class="form-label">Chest circumference (cm) – dchest</label>
+                <input class="form-control" type="number" name="dchest" step="0.1" min="0" required>
+              </div>
+
+              <!-- arms -->
+              <div class="mb-3">
+                <label class="form-label">Arms circumference (cm)</label>
+                <input class="form-control" type="number" name="arms" step="0.1" min="0" required>
+              </div>
+
+              <!-- waist -->
+              <div class="mb-3">
+                <label class="form-label">Waist (cm)</label>
+                <input class="form-control" type="number" name="waist" step="0.1" min="0" required>
+              </div>
+
+              <!-- legs -->
+              <div class="mb-3">
+                <label class="form-label">Legs circumference (cm)</label>
+                <input class="form-control" type="number" name="legs" step="0.1" min="0" required>
+              </div>
+
+              <!-- shoulders -->
+              <div class="mb-3">
+                <label class="form-label">Shoulders (cm)</label>
+                <input class="form-control" type="number" name="shoulders" step="0.1" min="0" required>
+              </div>
+
+              <!-- training_duration_minutes -->
+              <div class="mb-3">
+              <label class="form-label">Training duration (minutes)</label>
+              <input class="form-control" type="number" name="training_duration_minutes" step="0.1" min="0" required>
+              </div>
+
+              <!-- sleep_hours -->
+              <div class="mb-3">
+                <label class="form-label">Sleep hours (last night)</label>
+                <input class="form-control" type="number" name="sleep_hours" step="0.1" min="0" max="24" required>
+              </div>
+
+              <!-- stress_level -->
+              <div class="mb-3">
+                <label class="form-label">Stress level (0–10)</label>
+                <input class="form-control" type="number" name="stress_level" step="1" min="0" max="10" required>
+              </div>
+
+              <!-- program_phase -->
+              <div class="mb-3">
+                <label class="form-label">Program phase</label>
+                <select class="form-control" name="program_phase" required>
+                  <option selected disabled value="">Select phase</option>
+                  <option value="hypertrophy">hypertrophy</option>
+                  <option value="deload">deload</option>
+                </select>
+              </div>
+
+              <div class="d-grid">
+                <button class="btn btn-primary" type="submit">Predict bench volume</button>
+              </div>
+            </form>
+
+            {% if results is defined %}
+            <h2 class="h5 mt-4 text-center">Prediction: {{ results }}</h2>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

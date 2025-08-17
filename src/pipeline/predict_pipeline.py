@@ -1,5 +1,6 @@
 import sys
 import pandas as pd
+import os
 from src.exception import CustomException
 from src.utils import load_object
 
@@ -54,10 +55,10 @@ class CustomData:
                 "stress_level": [self.stress_level],
                 "program_phase": [self.program_phase]
             }
-            return pd.dataframe(data_input)
+            return pd.DataFrame(data_input)
         except Exception as e:
             raise CustomException(e, sys)
-            
+
 
 
 
