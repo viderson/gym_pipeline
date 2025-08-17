@@ -12,7 +12,7 @@ class PredictPipeline:
     def predict(self, features):
         try:
             model_path = os.path.join("artifacts","model.pkl")
-            preprocesor_path = os.path.join("artifacts", "preprocesor.pkl")
+            preprocesor_path = os.path.join("artifacts", "preprocessor.pkl")
             print("Before Loading")
             model = load_object(model_path)
             preprocesor = load_object(preprocesor_path)
@@ -23,10 +23,9 @@ class PredictPipeline:
         except Exception as e:
             raise CustomException(e, sys)
 class CustomData:
-    class TrainingData:
     def __init__(self, body_weight: float, mood: str, dchest: float, arms: float, waist: float,
-                 legs: float, shoulders: float, training_duration_minutes: float,
-                 sleep_hours: float, stress_level: int, program_phase: str):
+                legs: float, shoulders: float, training_duration_minutes: float,
+                sleep_hours: float, stress_level: int, program_phase: str):
 
         self.body_weight = body_weight
         self.mood = mood
@@ -69,13 +68,3 @@ class CustomData:
 
 
 
-
-        "body_weight",
-                "dchest",
-                "arms",
-                "waist",
-                "legs",
-                "shoulders",
-                "training_duration_minutes",
-                "sleep_hours",
-                "stress_level"

@@ -16,6 +16,7 @@ Requires-Dist: nbformat>=4.2.0
 Requires-Dist: catboost
 Requires-Dist: xgboost
 Requires-Dist: dill
+Requires-Dist: flask
 Dynamic: author
 Dynamic: requires-dist
 Dynamic: requires-python

@@ -10,4 +10,5 @@ nbformat>=4.2.0
 catboost
 xgboost
 dill
+flask
 -e .
